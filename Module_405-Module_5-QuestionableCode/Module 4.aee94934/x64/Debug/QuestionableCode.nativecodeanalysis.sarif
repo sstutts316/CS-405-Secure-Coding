@@ -1,0 +1,189 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'A::x' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/sstut/source/repos/Module_405-Module_5-QuestionableCode/QuestionableCode.cpp"
+                },
+                "region": {
+                  "startLine": 42,
+                  "startColumn": 5
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "A::{ctor}",
+                  "decoratedName": "??0A@@AEAA@AEBV0@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "A::x"
+          }
+        },
+        {
+          "ruleId": "C6386",
+          "message": {
+            "text": "Buffer overrun while writing to 'buf'."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/sstut/source/repos/Module_405-Module_5-QuestionableCode/QuestionableCode.cpp"
+                },
+                "region": {
+                  "startLine": 66,
+                  "startColumn": 9,
+                  "endLine": 66,
+                  "endColumn": 22
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "work_with_arrays",
+                  "decoratedName": "?work_with_arrays@@YAXH@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/sstut/source/repos/Module_405-Module_5-QuestionableCode/QuestionableCode.cpp"
+                          },
+                          "region": {
+                            "startLine": 64,
+                            "startColumn": 9
+                          }
+                        },
+                        "message": {
+                          "text": "'buf' is an array of 10 elements (40 bytes)"
+                        }
+                      },
+                      "kinds": [
+                        "declaration"
+                      ],
+                      "importance": "essential"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/sstut/source/repos/Module_405-Module_5-QuestionableCode/QuestionableCode.cpp"
+                          },
+                          "region": {
+                            "startLine": 65,
+                            "startColumn": 15
+                          }
+                        },
+                        "message": {
+                          "text": "'count' may equal 1000 (Enter this branch)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/sstut/source/repos/Module_405-Module_5-QuestionableCode/QuestionableCode.cpp"
+                          },
+                          "region": {
+                            "startLine": 66,
+                            "startColumn": 20
+                          }
+                        },
+                        "message": {
+                          "text": "Invalid write to 'buf[1000]', (writable range is 0 to 9)"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6282",
+          "message": {
+            "text": "Incorrect operator."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/sstut/source/repos/Module_405-Module_5-QuestionableCode/QuestionableCode.cpp"
+                },
+                "region": {
+                  "startLine": 127,
+                  "startColumn": 5
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "main",
+                  "decoratedName": "main",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.39.33523.0",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///C:/Users/sstut/source/repos/Module_405-Module_5-QuestionableCode/QuestionableCode.cpp"
+          },
+          "roles": [
+            "analysisTarget",
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "17daf594c5f3f47677657d8abe35c19eade4746a87e0c20c3ef8a04402bfb238"
+          }
+        }
+      ]
+    }
+  ]
+}
