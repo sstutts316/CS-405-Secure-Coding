@@ -1,0 +1,2 @@
+C:\Users\sstut\source\repos\Exceptions\x64\Debug\Exceptions.exe
+C:\Users\sstut\source\repos\CS_405_Exceptions\x64\Debug\Exceptions.exe
